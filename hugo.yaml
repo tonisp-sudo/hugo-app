@@ -129,9 +129,9 @@ params:
   hero:
     enable: true
     intro: "Hi, my name is"
-    title: "Urbel."
+    title: "Tõnis."
     subtitle: "I am fascinated by all things IT"
-    content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly."
+    content: "A passionate IT professional. I tend to make use of modern technologies to build solutions that look great, feel fantastic, and function correctly."
     image: "/images/hero.svg"
     # roundImage: false # Make hero image circular | default false
 

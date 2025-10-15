@@ -52,7 +52,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hugo-site-public
-          path: public # Download it back into a folder named 'public'
+          # FIX: We remove the 'path' argument. By default, V4 downloads to the
+          # current working directory, which will place the 'public' folder at the
+          # root of this job's workspace, satisfying the deployment action.
           
       - name: Deploy to Azure Static Web Apps
         id: builddeploy

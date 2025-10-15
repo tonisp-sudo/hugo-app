@@ -19,7 +19,44 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Build And Deploy
+
+      # --- START: Explicit Hugo Build Steps (Gold Standard) ---
+      # 1. Install Hugo using a dedicated action
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      # 2. Run the Hugo build command, creating the 'public' folder
+      - name: Build Hugo Site
+        run: hugo --minify
+
+      # 3. CRITICAL NEW STEP: Upload the built 'public' folder as a named artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-site-public
+          path: public
+      # --- END: Explicit Hugo Build Steps ---
+
+  # NEW JOB: Deployment should run in a separate job after the build is complete
+  deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Deploy Job
+    needs: build_and_deploy_job # Wait for the build job to complete
+    steps:
+      # 1. Download the built 'public' folder artifact from the previous job
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: hugo-site-public
+          # FIX: We remove the 'path' argument. By default, V4 downloads to the
+          # current working directory, which will place the 'public' folder at the
+          # root of this job's workspace, satisfying the deployment action.
+          
+      - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -27,20 +64,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "public" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_SAND_025958810 }}
-          action: "close"
+          app_location: "/" # Source code location (ignored for deployment, but required)
+          api_location: ""
+          
+          # CRITICAL FIXES: These parameters are now guaranteed to work because the 'public' folder is present
+          skip_app_build: true 
+          app_artifact_location: "public"

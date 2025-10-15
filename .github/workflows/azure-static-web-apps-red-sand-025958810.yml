@@ -20,7 +20,7 @@ jobs:
           submodules: true
           lfs: false
 
-      # --- START: Explicit Hugo Build Steps ---
+      # --- START: Explicit Hugo Build Steps (Gold Standard) ---
       # 1. Install Hugo using a dedicated action
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
@@ -42,9 +42,11 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path (Correct)
+          app_location: "/" # App source code path (Your project root)
           api_location: "" # Api source code path - optional
           
           # CRITICAL FIX: Skip the internal Oryx build step since we already ran 'hugo --minify'
           skip_app_build: true 
-          output_location: "public" # CRITICAL: Tells the deploy action to use the 'public' folder
+          
+          # CRITICAL FIX: Use app_artifact_location to reliably point to the 'public' folder
+          app_artifact_location: "public"

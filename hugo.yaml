@@ -129,7 +129,7 @@ params:
   hero:
     enable: true
     intro: "Hi, my name is"
-    title: "Tõnis."
+    title: "Urbel."
     subtitle: "I am fascinated by all things IT"
     content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly."
     image: "/images/hero.svg"

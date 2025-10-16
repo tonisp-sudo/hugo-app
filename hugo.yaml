@@ -2,7 +2,7 @@
 
 baseURL: "https://hugo-profile.netlify.app"
 languageCode: "en-us"
-title: "Hugo Profile"
+title: "Praks Consulting"
 theme: hugo-profile
 
 enableRobotsTXT: true
@@ -33,17 +33,17 @@ markup:
 
 # Menus - defining the top navigation bar links
 menu:
-  main:
-    - identifier: blog
-      name: Blog
-      title: Blog posts
-      url: /blogs
-      weight: 1
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
-      weight: 2
+  main: [] #I added [] to avoid error, to bring back blog and gallery, remove [] from this line and uncomment the lines below
+    #- identifier: blog
+    #  name: Blog
+    #  title: Blog posts
+    #  url: /blogs
+    #  weight: 1
+    #- identifier: gallery
+    #  name: Gallery
+    #  title: Blog posts
+    #  url: /gallery
+    #  weight: 2
 
 # Dropdown menu items (commented out for consistency with TOML)
 #   - identifier: dropdown
@@ -66,7 +66,7 @@ menu:
 
 # Parameters (params) control the theme's custom content sections
 params:
-  title: "Hugo Profile"
+  title: "Praks IT Consulting"
   description: "Text about my cool site"
   # staticPath: ""  # The path to serve the static files from
   favicon: "/fav.png"
@@ -120,18 +120,18 @@ params:
 
     menus:
       disableAbout: false
-      disableExperience: false
+      disableExperience: true
       disableEducation: false
       disableProjects: false
       disableAchievements: true
-      disableContact: true
+      disableContact: false
 
   hero:
     enable: true
     intro: "Hi, my name is"
     title: "Tõnis."
     subtitle: "I am fascinated by all things related to IT and networking"
-    content: "A passionate IT professional. I make use of modern technologies to build solutions that look great, feel fantastic, and function properly."
+    content: "I make use of modern technologies to build solutions that look great, feel fantastic, and function properly."
     #image: "/images/portrait.png"
       #roundImage: false # Make hero image circular | default false
 
@@ -159,7 +159,7 @@ params:
 
   about:
     enable: true
-    title: "About Me"
+    title: "About"
     image: "/images/me.png"
     # Note: Using the | literal block scalar for multi-line content
     content: |
@@ -179,7 +179,7 @@ params:
         - "Cisco Networking"
 
   experience:
-    enable: true
+    enable: false # I changed this to false to hide experience section, set to true to bring it back.
     # title: "Custom Name"
     items:
       # Experience Item 1: Cheela Plains Station

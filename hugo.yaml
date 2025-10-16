@@ -108,9 +108,9 @@ params:
   navbar:
     align: "ms-auto" # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
     # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
-    # showBrandLogo: false # Show brand logo in nav bar | default is true
-    brandName: "Hugo Profile" # Brand name for the brand | default is the title variable
-    disableSearch: false
+    showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "" # Brand name for the brand | default is the title variable
+    disableSearch: true
     # searchPlaceholder: "Search"
     enableSeparator: false
 
@@ -123,17 +123,17 @@ params:
       disableExperience: false
       disableEducation: false
       disableProjects: false
-      disableAchievements: false
-      disableContact: false
+      disableAchievements: true
+      disableContact: true
 
   hero:
     enable: true
     intro: "Hi, my name is"
     title: "Tõnis."
-    subtitle: "I am fascinated by all things IT"
-    content: "A passionate IT professional. I tend to make use of modern technologies to build solutions that look great, feel fantastic, and function correctly."
-    image: "/images/hero.svg"
-    # roundImage: false # Make hero image circular | default false
+    subtitle: "I am fascinated by all things related to IT and networking"
+    content: "A passionate IT professional. I make use of modern technologies to build solutions that look great, feel fantastic, and function properly."
+    #image: "/images/portrait.png"
+      #roundImage: false # Make hero image circular | default false
 
     bottomImage:
       enable: true
@@ -150,11 +150,11 @@ params:
       fontAwesomeIcons:
         - icon: "fab fa-github"
           url: "https://example.com"
-        - icon: "fab fa-x-twitter"
+        #- icon: "fab fa-x-twitter"
           url: "https://example.com"
       # Custom Icons
-      customIcons:
-        - icon: "/fav.png"
+      #customIcons:
+        #- icon: "/fav.png"
           url: "https://example.com"
 
   about:

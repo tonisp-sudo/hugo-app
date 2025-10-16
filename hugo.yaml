@@ -131,7 +131,7 @@ params:
     intro: "Hi, my name is"
     title: "Tõnis."
     subtitle: "I am fascinated by all things related to IT and networking"
-    content: "I make use of modern technologies to build solutions that look great, feel fantastic, and function properly."
+    content: "I make use of modern technologies to build solutions that look great, feel fantastic, and function as they should."
     #image: "/images/portrait.png"
       #roundImage: false # Make hero image circular | default false
 
@@ -149,13 +149,13 @@ params:
       # Font Awesome Icons
       fontAwesomeIcons:
         - icon: "fab fa-github"
-          url: "https://example.com"
+          url: "https://github.com/tonisp-sudo"
         #- icon: "fab fa-x-twitter"
-          url: "https://example.com"
+        #  url: "https://example.com"
       # Custom Icons
       #customIcons:
         #- icon: "/fav.png"
-          url: "https://example.com"
+        #  url: "https://example.com"
 
   about:
     enable: true
@@ -163,7 +163,8 @@ params:
     image: "/images/me.png"
     # Note: Using the | literal block scalar for multi-line content
     content: |
-      I am a head chef with a passion for IT. I have a background of more than a decade in culinary arts. This website will serve as my portfolio to showcase my skills and projects to kickstart my career in IT.
+     
+     This website serves as both my professional portfolio and a hub for my IT support services, showcasing projects, skills, and solutions I provide for clients and personal initiatives.
 
       I am currently working on this website and Python with Mediapipe framework to build an application that can be used to analyse strength training metrics by utilising by utilising Mediapipe’s pose estimation and Python-based analysis tools to develop a real-time motion tracking and feedback system for strength training. .
 

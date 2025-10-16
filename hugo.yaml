@@ -310,7 +310,7 @@ params:
 
 
   achievements:
-    enable: true
+    enable: false #use true to enable achievements section once it is ready
     # title: "Custom Name"
     items:
       - title: "Google kickstart runner"
@@ -335,7 +335,7 @@ params:
         url: "https://example.com"
 
   projects:
-    enable: true
+    enable: false #use true to enable projects section once it is ready
     # title: "Custom Name"
     items:
       # Project 1: Hugo Profile

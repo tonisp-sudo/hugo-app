@@ -1,0 +1,22 @@
+<!-- 
+THE DEFINITIVE FIX: This local file overrides the theme's file at 
+themes/hugo-profile/layouts/partials/sections/footer/copyright.html 
+and removes the hard-coded 'Made with Hugo Profile' attribution.
+-->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            {{ if or .Site.Params.navbar.brandLogo .Site.Params.favicon }}
+                <div class="pb-2">
+                    <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
+                        <img alt="Footer logo" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            {{ end }}
+            &copy; {{ now.Format "2006"}} {{ .Site.Params.copyright }} {{ .Site.Params.terms.copyright | default "All Rights Reserved" }}
+            <!-- The theme attribution block has been successfully removed from here. -->
+        </div>
+    </div>
+</div>
+

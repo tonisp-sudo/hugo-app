@@ -1,5 +1,3 @@
-# Hugo Site Configuration converted from TOML back to YAML
-
 baseURL: "https://hugo-profile.netlify.app"
 languageCode: "en-us"
 title: "Praks Consulting"
@@ -138,20 +136,20 @@ params:
     bottomImage:
       enable: true
 
-    button:
-      enable: true
-      name: "Resume"
-      url: "#"
-      download: true
-      newPage: false
+    #button:
+    #  enable: true
+    #  name: "Resume"
+    #  url: "#"
+    #  download: true
+    #  newPage: false
 
     socialLinks:
       # Font Awesome Icons
       fontAwesomeIcons:
         - icon: "fab fa-github"
           url: "https://github.com/tonisp-sudo"
-        #- icon: "fab fa-x-twitter"
-        #  url: "https://example.com"
+        - icon: "fab fa-linkedin-in"
+          url: "https://www.linkedin.com/in/tonispraks"
       # Custom Icons
       #customIcons:
         #- icon: "/fav.png"
@@ -164,9 +162,13 @@ params:
     # Note: Using the | literal block scalar for multi-line content
     content: |
      
-     This website serves as both my professional portfolio and a hub for my IT support services, showcasing projects, skills, and solutions I provide for clients and personal initiatives.
+      Welcome to my website — a space that serves as both my professional portfolio and a home for my IT support services. Here, I share the projects I’m developing, the technologies I’m learning, and the practical solutions I provide to clients.
 
-      I am currently working on this website and Python with Mediapipe framework to build an application that can be used to analyse strength training metrics by utilising by utilising Mediapipe’s pose estimation and Python-based analysis tools to develop a real-time motion tracking and feedback system for strength training. .
+      After more than a decade in the culinary industry, I’ve transitioned my passion for problem-solving, precision, and systems into the world of information technology. My focus is on networking, Linux systems, cloud technologies and general hardware and software troubleshooting with hands-on experience maintaining and troubleshooting real environments in my homelab.
+
+      I hold a Cisco Certified Network Associate (CCNA) and an ICT40120 Certificate IV in Information Technology, and continue to expand my technical skills through projects that combine networking, automation, and data analysis.
+
+      I am currently working on this website and Python with Mediapipe framework to build an application that can be used to analyse strength training metrics by utilising by utilising Mediapipe’s pose estimation and Python-based analysis tools to develop a real-time motion tracking and feedback system for strength training.
 
     skills:
       enable: true
@@ -175,9 +177,13 @@ params:
         - "Python"
         - "Red Hat Linux"
         - "Azure"
+        - "Debian Linux"
+        - "macOS and Windows OS"
         - "Hugo framework"
         - "Mediapipe framework"
         - "Cisco Networking"
+        - "VMware"
+        - "Microsoft 365"
 
   experience:
     enable: false # I changed this to false to hide experience section, set to true to bring it back.
